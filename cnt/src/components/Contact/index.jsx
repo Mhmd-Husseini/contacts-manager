@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import './style.css';
+
 
 const Contact = ({ name, phone, latitude, longitude, id, fetchContacts }) => {
     // console.log(id)
@@ -12,14 +14,14 @@ const deleteContact = async () =>{
       } catch (error) {
         console.error('Error fetching contacts:', error);
       }
-
 };
 
   return (
     <div key={id} className="contact-card">
-      <h2>{name}  <button>Edit </button> <button onClick={deleteContact}>Delete </button></h2> 
+      <h2>{name}  </h2> 
       <p>Phone: {phone}</p>
       <p>Address: {latitude}, {longitude}</p>
+      <button>Edit </button> <button onClick={deleteContact}>Delete </button>
     </div>
   );
 };
